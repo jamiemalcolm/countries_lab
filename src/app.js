@@ -10,6 +10,12 @@ new Vue({
     this.fetchCountries();
 
   },
+  computed: {
+    totalPopulation: function () {
+      return this.countries.reduce((total, country) => 
+        total + country.population, 0);
+    }
+  },
   methods: {
     fetchCountries: function (){
       fetch('https://restcountries.eu/rest/v2/all')

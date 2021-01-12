@@ -10,7 +10,12 @@
 
 <body>
   <div id="app">
+    <h1>World population:{{ totalPopulation }}</h1>
 
+    <label for="selecCountry">Select Country</label>
+    <select id="selectCountry" name="country">
+      <option v-for="country in countries" value="{{country.name}}">{{country.name}}</option>
+    </select>
   </div>
 </body>
 
