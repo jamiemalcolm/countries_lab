@@ -1,0 +1,19 @@
+body{
+  text-align: center;
+  background-color: #78D5D7;
+}
+
+li{
+  list-style: none;
+}
+#app{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#selectedCountryDetails{
+  background-color: #BED8D4;
+  border-radius: 5px;
+  width: 150;
+  padding: 10px;
+}

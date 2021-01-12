@@ -26,7 +26,8 @@ new Vue({
       .then( data => this.countries = data );
     },
     saveNewCountry: function(){
-      this.favouriteCountries.push(this.selectedCountry)
+      if(!this.favouriteCountries.includes(this.selectedCountry)){
+      this.favouriteCountries.push(this.selectedCountry)}
     }
   },
 })
