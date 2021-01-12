@@ -12,10 +12,37 @@
   <div id="app">
     <h1>World population:{{ totalPopulation }}</h1>
 
-    <label for="selecCountry">Select Country</label>
-    <select id="selectCountry" name="country">
-      <option v-for="country in countries" value="{{country.name}}">{{country.name}}</option>
+    <label for="selectCountry">Select Country</label>
+    <select v-model="selectedCountry" id="selectCountry" name="country">
+      <option v-for="country in countries" v-bind:value="country">{{country.name}}</option>
     </select>
+    <div id="selectedCountryDetails">
+      <ul>
+        <li>
+          {{ selectedCountry.name }}
+        </li>
+        <li>
+          {{ selectedCountry.population }}
+        </li>
+        <li>
+          {{ selectedCountry.capital }}
+        </li>
+        <li>
+          <img id="country-flag" v-bind:src="selectedCountry.flag" width="300px" />
+        </li>
+      </ul>
+    </div>
+    <div id="formContainer">
+      <form v-on:submit.prevent="saveNewCountry">
+        <input type="submit" value="Add to Favourite Countries" />
+      </form>
+    </div>
+    <h2> List Of Favourite Countries</h2>
+    <ul>
+      <li v-for="country in favouriteCountries">
+        <h3> {{ country.name }}</h3>
+      </li>
+    </ul>
   </div>
 </body>
 
